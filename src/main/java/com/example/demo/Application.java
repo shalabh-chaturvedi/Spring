@@ -11,11 +11,20 @@ import org.springframework.core.io.Resource;
 public class Application {
 
 	public static void main(String[] args) {
-		Resource resource=new ClassPathResource("applicationContext.xml");
+
+		if (args == null || args.length < 1) {
+			System.err.println("Context File not provided. Exiting..");
+			System.exit(1);
+		}
+		else
+			start(args[0]);
+	}
+
+	private static void start(String contextFile) {
+		Resource resource=new ClassPathResource(contextFile);
 		BeanFactory factory=new XmlBeanFactory(resource);
 
 		Student student=(Student)factory.getBean("studentbean");
 		student.displayInfo();
 	}
-
 }
