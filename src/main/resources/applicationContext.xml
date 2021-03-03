@@ -8,6 +8,12 @@
 
     <bean id="studentbean" class="com.example.demo.Student">
         <property name="name" value="Jack"></property>
+        <property name="address" ref="addressbean"/>
+    </bean>
+
+    <bean id="addressbean" class="com.example.demo.Address">
+        <property name="city" value="Delhi"/>
+        <property name="zipcode" value="123456"/>
     </bean>
 
 </beans>

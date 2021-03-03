@@ -2,6 +2,15 @@ package com.example.demo;
 
 public class Student {
     private static String name;
+    private Address address;
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 
     public static String getName() {
         return name;
@@ -12,6 +21,6 @@ public class Student {
     }
 
     public void displayInfo() {
-        System.out.println("Hello " + name);
+        System.out.println("Hello " + name + " from " + address.getCity() + "-" + address.getZipcode());
     }
 }
