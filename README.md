@@ -1,6 +1,5 @@
 <div class="text-green">
-  <a href="#" class="text-inherit"/>
-### Spring
+  <a href="#" class="text-inherit">### Spring</a>
 </div>
 Spring framework is an open source Java platform that provides comprehensive infrastructure support for developing robust Java applications very easily and very rapidly
 
