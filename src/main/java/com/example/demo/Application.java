@@ -1,11 +1,7 @@
 package com.example.demo;
 
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 @SpringBootApplication
 public class Application {
@@ -16,15 +12,22 @@ public class Application {
 			System.err.println("Context File not provided. Exiting..");
 			System.exit(1);
 		}
-		else
-			start(args[0]);
+		studentStart(args[0]);
+		coachWorkout(args[0]);
 	}
 
-	private static void start(String contextFile) {
-		Resource resource=new ClassPathResource(contextFile);
-		BeanFactory factory=new XmlBeanFactory(resource);
-
-		Student student=(Student)factory.getBean("studentbean");
+	private static void studentStart(String contextFile) {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(contextFile);
+		Student student=context.getBean("studentbean", Student.class);
 		student.displayInfo();
+		context.close();
+	}
+
+	private static void coachWorkout(String contextFile){
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(contextFile);
+		Coach coach = context.getBean("coach", Coach.class);
+		System.out.println(coach.workout());
+		System.out.println(coach.getDailyFortune());
+		context.close();
 	}
 }

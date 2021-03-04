@@ -16,4 +16,11 @@
         <property name="zipcode" value="123456"/>
     </bean>
 
+    <bean name="myFortune" class="com.example.demo.HappyFortuneService">
+    </bean>
+
+    <bean id="coach" class="com.example.demo.CricketCoach">
+        <constructor-arg ref="myFortune"/>
+    </bean>
+
 </beans>
