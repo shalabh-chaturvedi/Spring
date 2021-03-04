@@ -5,5 +5,5 @@ Spring framework is an open source Java platform that provides comprehensive inf
 1. Create a POJO class
 2. Create context (xml) file to create beans, define dependency and provide values
 3. Create application/test class
-4. Add spring dependency in pom.xml
+4. Add spring jars. You can download all spring jars from [here](https://repo.spring.io/release/org/springframework/spring)
 5. Execute application/test class
