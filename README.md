@@ -1,6 +1,4 @@
-<div class="text-green">
-  ### Spring
-</div>
+### Spring
 Spring framework is an open source Java platform that provides comprehensive infrastructure support for developing robust Java applications very easily and very rapidly
 
 #### Steps to create spring application using xml based configuration
