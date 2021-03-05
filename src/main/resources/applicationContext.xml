@@ -20,7 +20,16 @@
     </bean>
 
     <bean id="coach" class="com.example.demo.CricketCoach">
+        <!--Constructor dependency-->
         <constructor-arg ref="myFortune"/>
+    </bean>
+    
+    <bean id="baseballCoach" class="com.example.demo.BaseballCoach">
+        <!--Setter dependency-->
+        <property name="fortuneService" ref="myFortune"/>
+        <!--Injecting value dependency-->
+        <property name="email" value="baseballcoach@workout.com"/>
+        <property name="team" value="Yankees"/>
     </bean>
 
 </beans>
