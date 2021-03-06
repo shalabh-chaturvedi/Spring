@@ -9,7 +9,7 @@
 
     <bean name="myFortune" class="com.example.demo.HappyFortuneService"/>
 
-    <bean id="coach" class="com.example.demo.CricketCoach">
+    <bean id="coach" class="com.example.demo.CricketCoach" scope="prototype">
         <!--Constructor injection-->
         <constructor-arg ref="myFortune"/>
     </bean>
